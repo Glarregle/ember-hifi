@@ -4,6 +4,7 @@ import hifiNeeds from './hifi-needs';
 
 const dummyHifi = Service.extend({
   init: function() {
+    this._super(...arguments);
     this.set('options', {
       emberHifi: {
         connections: [{
@@ -14,7 +15,6 @@ const dummyHifi = Service.extend({
         }]
       }
     });
-    this._super(...arguments);
   },
   _lookupConnection: function() {
     return DummyConnection;
